@@ -1,7 +1,8 @@
 # Proiect2-POO
 
+<h5>Autor: Plesca Maria-Erika, grupa 133</h5>
 <h3>Descriere</h3>
-Acest proiect implementează un sistem complet de gestiune pentru un service auto folosind principiile programării orientate pe obiecte în C++. Sistemul permite administrarea clienților, vehiculelor, angajaților, reparațiilor și facturilor, oferind o soluție completă pentru gestionarea operațiunilor zilnice ale unui service auto.
+Acest proiect implementează un sistem complet de gestiune pentru un service auto folosind principiile programării orientate pe obiecte în C++. Sistemul permite administrarea clienților, vehiculelor, angajaților, reparațiilor și facturilor, oferind o soluție minimală pentru gestionarea operațiunilor zilnice ale unui service auto.
 
 <h3>URMEAZA SA MAI UPDATEZ PROIECTUL (lucrez la mai multe mosteniri, funcții virtuale (pure), constructori virtuali (clone), dynamic_cast)</h3>
 
