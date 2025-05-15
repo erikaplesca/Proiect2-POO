@@ -2,12 +2,10 @@
 
 <h5>Autor: Plesca Maria-Erika, grupa 133</h5>
 <h3>Descriere</h3>
-Acest proiect implementează un sistem complet de gestiune pentru un service auto folosind principiile programării orientate pe obiecte în C++. Sistemul permite administrarea clienților, vehiculelor, angajaților, reparațiilor și facturilor, oferind o soluție minimală pentru gestionarea operațiunilor zilnice ale unui service auto.
-
-<h3>URMEAZA SA MAI UPDATEZ PROIECTUL (lucrez la mai multe mosteniri, funcții virtuale (pure), constructori virtuali (clone), dynamic_cast)</h3>
+Acest proiect implementează un sistem complet de gestiune pentru un service auto folosind principiile programării orientate pe obiecte în C++. Sistemul permite administrarea clienților, vehiculelor, angajaților, reparațiilor și facturilor (cu serviciile aferente), oferind o soluție minimală pentru gestionarea operațiunilor zilnice ale unui service auto.
 
 <h3>Structura proiectului</h3>
-Proiectul este organizat într-o arhitectură modulară, cu fiecare entitate implementată ca o clasă separată:
+Proiectul este organizat într-o arhitectură modulară, cu fiecare entitate implementată ca o clasă separată:<br>
 ├── angajat.h, angajat.cpp    # Gestionează angajații service-ului <br>
 ├── client.h, client.cpp      # Administrează datele clienților  <br>
 ├── masina.h, masina.cpp      # Gestionează informații despre vehicule  <br>
@@ -15,12 +13,12 @@ Proiectul este organizat într-o arhitectură modulară, cu fiecare entitate imp
 ├── factura.h, factura.cpp    # Gestionează facturile și plățile  <br>
 ├── main.cpp                  # Conține bucla principală a aplicației  <br>
 ├── Makefile                  # Configurație pentru compilare <br>
-└── input.in                  # Fișier cu date de intrare <br>
+└── input2.in                  # Fișier cu date de intrare <br>
 
 
 <h3>Funcționalități principale</h3>
 Sistemul oferă următoarele funcționalități: <br>
-- Gestionarea  lienților: Adăugarea și afișarea clienților (persoane fizice și juridice). <br>
+- Gestionarea  clienților: Adăugarea și afișarea clienților (persoane fizice și juridice). <br>
 - Gestiunea vehiculelor: Înregistrarea și afișarea mașinilor cu detalii de identificare. <br>
 - Administrarea angajaților: Adăugarea și listarea angajaților și stațiilor de lucru. <br>
 - Înregistrarea reparațiilor: Documentarea intervențiilor cu detalii despre mașină, client, angajat și costul reparației. <br>
@@ -29,28 +27,69 @@ Sistemul oferă următoarele funcționalități: <br>
 - Generarea facturilor: Crearea și gestionarea facturilor cu calculul TVA și discount-urilor. <br>
 
 
-<h3>Formatul datelor de intrare (input.in) </h3>
-Sistemul citește date din fișierul input.in care conține, pe fiecare linie, un număr de opțiune urmat de datele specifice operației:<br>
+<h3>Formatul datelor de intrare (input2.in) </h3>
+Sistemul citește date din fișierul input2.in care conține, pe fiecare linie, un număr de opțiune urmat de datele specifice operației:<br><br>
 
+<i>-> Adăugare client <br></i>
+1 [Numele clientului] [Tip client]            
+<br>
+<i>-> Afișare clienți <br></i>
+2                                                 
+<br>
+<i>-> Adăugare mașină<br></i>
+3 [Nr.Inm] [Marca] [Model] [Nume proprietar] [Tip proprietar] <br>
+<br>
+<i>-> Afișare mașini</i><br>
+4                                                
+<br>
+<i>-> Adăugare angajat </i><br>
+5 [Numele angajatului] [Statia de lucru]          
+<br>
+<i>-> Afișare angajați</i><br>
+6                                                 
+<br>
+<i>-> Adaugare reparatie</i><br>
+7  <br>              
+----> Pentru fiecare reparatie, in functie de tipul reparatiei: <br>
+<ul>
+   <li> <i>Pentru serviciul de tip Schimb ulei:</i><br>
+  [NrInm] [Marca] [Model] [NumeProprietar] [TipProprietar] [NumeAngajat] [StatiaLucru] Schimb_ulei [0 sau 1 pentru transmisie] [cantitate ulei]</li><br>
+  <br>
+  <li><i>Pentru serviciul de tip Diagnoza:</i><br>
+	[NrInm] [Marca] [Model] [NumeProprietar] [TipProprietar] [NumeAngajat] [StatiaLucru] Diagnoza [Nr. Sisteme verificate] </li><br>
+<br>
+	<li><i>Pentru serviciul de tip Geometrie roti:</i><br>
+	[NrInm] [Marca] [Model] [NumeProprietar] [TipProprietar] [NumeAngajat] [StatiaLucru] Geometrie_roti [Nr. Axe] </li><br>
+<br>
+	<li> <i>Pentru serviciul de tip Electrica:</i><br>
+	[NrInm] [Marca] [Model] [NumeProprietar] [TipProprietar] [NumeAngajat] [StatiaLucru] Electrica [Cost piese]</li><br>
+<br>
+	<li><i>Pentru serviciul de tip Vopsire:</i><br>
+	[NrInm] [Marca] [Model] [NumeProprietar] [TipProprietar] [NumeAngajat] [StatiaLucru] Vopsire [Suprafata vopsita]</li><br>
+</ul>
+  <br>
+<i>
+-> Afisarea tuturor reparatiilor <br></i>
+8            
+<br><br>
 
-1 [Numele clientului] [Tip client]                # Adăugare client <br>
-2                                                 # Afișare clienți <br>
-3 [Nr.Inm] [Marca] [Model] [Nume proprietar] [Tip proprietar] # Adăugare mașină <br>
-4                                                 # Afișare mașini <br>
-5 [Numele angajatului] [Statia de lucru]          # Adăugare angajat <br>
-6                                                 # Afișare angajați <br>
-7 [Nr.Inm] [Marca] [Model] [Nume proprietar] [Tip proprietar] [Nume angajat] [Statia de lucru] [Tip reparatie] [Cost] # Adăugare reparație <br>
-8                                                 # Afișare reparații <br>
-9 [Nr. Reparatiei 1] [Nr. Reparatiei 2]           # Interschimbare stații de lucru <br>
-10 [Numele clientului]                            # Afișare sumă totală de plată <br>
-11 [Detalii factură]                              # Generare factură <br>
-12 [ID factură]                                   # Afișare factură specifică <br>
+<i>
+-> Insterschimbarea statiilor de lucru intre doua reparatii <br></i>
+9 [Nr. Reparatiei 1] [Nr. Reparatiei 2]             
+<br><br>
 
-Exemplu concret din input.in: <br>
-1 Irina-Petronela Persoana_fizica  <br>
-1 Indaco_SRL Persoana_juridica <br>
-3 NT56DRE VOLVO X60 Irina-Petronela Persoana_fizica <br>
-7 NT56DRE VOLVO X60 Irina-Petronela Persoana_fizica Vasile-Cozma 2 Geometrie_roti 1187.56 <br>
+<i>
+-> Generarea unei noi facturi <br></i>
+10 <br>
+[Numele clientului] [Tip client]  <br>
+[Data emiterii facturii] [Nr.Factura] [TVA] [Stadiu plata (0 = Neplatita, 1 = Platita)], [Nr.Reparatii] <br>
+<i>----> Apoi, pe rand, datele fiecarei reparatii ca in exemplul de mai sus.</i><br>
+<br>
+
+<i>
+-> Afisarea sumei de plata, adunand toate facturile neplatite ale respectivului client.<br></i>
+12 [Numele clientului]<br>           
+<br><br>
 
 <h3>Implementare OOP</h3>
 
@@ -59,8 +98,14 @@ Proiectul conține următoarele clase: <br>
 Client: Stochează informații despre clienți (nume, tip client). <br>
 Mașină: Gestionează date despre vehicule (nr. înmatriculare, marcă, model, proprietar). <br>
 Angajat: Administrează informații despre angajați (nume, stația de lucru). <br>
-Reparație: Înregistrează detalii despre reparații (mașină, angajat, tip reparație, cost). <br>
-Factură: Gestionează facturile (client, reparații, data emitere, TVA, status plată). <br>
+Reparație: Înregistrează detalii despre reparații (mașină, angajat, pointer catre serviciu). <br>
+Factură: Gestionează facturile (client, reparații, data emitere, nr. factura, TVA, status plată). <br>
+Serviciu: Clasa de bază din care avem următoarele clase derivate: <br>
+--> SchimbUlei<br>
+--> Diagnoza<br>
+--> GeometrieRoti<br>
+--> Electrica <br>
+--> Vopsire <br><br>
 
 <h4>Constructori și Destructori </h4>
 Fiecare clasă implementează: <br>
@@ -83,21 +128,13 @@ Client& operator=(const Client& other);  // Operator de atribuire<br>
 <h4>Relațiile între clase</h4>
 Proiectul folosește concepte OOP pentru a modela relațiile dintre entități:
 <ul>
-  <li>Compoziție: Clasa Mașină conține un obiect Client (proprietarul)</li>
-  <li>Agregare: Clasa Reparație agregă obiecte Mașină și Angajat</li>
-  <li>Colecții: Clasa Factură utilizează un vector de obiecte Reparație</li>
-</ul>
-
-<h4>Exemple de utilizare</h4>
-Sistemul poate fi utilizat pentru următoarele scenarii: <br>
-<ul>
-  <li>Înregistrarea unui nou client în sistem</li>
-  <li>Adăugarea mașinilor clienților</li>
-  <li>Înregistrarea angajaților service-ului</li>
-  <li>Documentarea reparațiilor efectuate</li>
-  <li>Generarea facturilor pentru clienți</li>
-  <li>Calculul costurilor totale pentru un client</li>
-  <li>Interschimbarea stațiilor de lucru între reparații</li>
+  <li>Compoziție<br> Clasa Mașină conține un obiect Client (proprietarul)</li>
+  <li>Agregare<br>Clasa Reparație agregă obiecte Mașină și Angajat</li>
+  <li>Mostenire <br>
+    Există o ierarhie clară de clase: Serviciu este clasa de bază, iar clasele precum SchimbUlei, Diagnoza, GeometrieRoti, Electrica și Vopsire moștenesc din aceasta și extind comportamentul de bază. Astfel, codul este mai reutilizabil și ușor de extins cu noi tipuri de servicii.</li>
+  <li>Polimorfism<br>
+    - Sunt definite funcții virtuale pure în clasa de bază Serviciu (ex: virtual float calculeazaCost() const = 0;), iar fiecare clasă derivată implementează propriul algoritm de calcul.<br>
+    - În cadrul clasei Reparatie, serviciul este gestionat printr-un pointer la clasa de bază (std::shared_ptr<Serviciu>), astfel încât metodele virtuale sunt apelate polimorfic, fără a cunoaște tipul concret al serviciului.</li>
 </ul>
 
 <h3>Bibliografie</h3>
@@ -108,3 +145,9 @@ https://www.reddit.com/r/cpp_questions/comments/15o5049/i_created_a_c_oop_templa
 https://www.youtube.com/watch?v=6yp0C5G5EKo <br>
 https://bito.ai/resources/virtual-functions-in-c-plus/ <br>
 https://www.youtube.com/watch?v=v2_Pth8MrKA&t=550s <br>
+https://www.digitalocean.com/community/tutorials/return-array-in-c-plus-plus-function<br>
+https://stackoverflow.com/questions/19042552/returning-a-pointer-of-a-local-variable-c<br>
+https://forum.arduino.cc/t/can-a-function-return-a-char-array/63405<br>
+https://how.dev/answers/how-to-get-the-current-date-and-time-in-cpp<br>
+https://www.reddit.com/r/cpp_questions/comments/nfctj2/operator_overloading_while_doing_inheritance/<br>
+https://stackoverflow.com/questions/3642010/can-i-compare-int-with-size-t-directly-in-c<br>
