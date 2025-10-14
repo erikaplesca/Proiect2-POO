@@ -1,4 +1,4 @@
-# Proiect2-POO
+# Program de gestiune a unui service auto in C++
 
 <h5>Autor: Plesca Maria-Erika, grupa 133</h5>
 <h3>Descriere</h3>
